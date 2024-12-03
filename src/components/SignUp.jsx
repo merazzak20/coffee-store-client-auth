@@ -19,13 +19,16 @@ const SignUp = () => {
         const newUser = { name, email, createAt };
 
         // connect to DB
-        fetch("http://localhost:5000/users", {
-          method: "post",
-          headers: {
-            "content-type": "application/json",
-          },
-          body: JSON.stringify(newUser),
-        })
+        fetch(
+          "https://coffee-store-server-qdrgu4ecz-merazzak20s-projects.vercel.app/users",
+          {
+            method: "post",
+            headers: {
+              "content-type": "application/json",
+            },
+            body: JSON.stringify(newUser),
+          }
+        )
           .then((res) => res.json())
           .then((data) => {
             console.log("created user", data);
